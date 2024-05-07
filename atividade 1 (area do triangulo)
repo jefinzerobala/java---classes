@@ -1,0 +1,45 @@
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        DecimalFormat df = new DecimalFormat("##,##0.0");
+
+        double area;
+
+        CalcularSoma calc;
+        calc = new CalcularSoma(); //Instanciação de classe calcular soma
+
+        System.out.print("Insira o valor da altura do triângulo: ");
+        calc.a = sc.nextInt();
+
+        System.out.print("Insira o valor da base do triângulo: ");
+        calc.b = sc.nextInt();
+
+        area = calc.somaValores();
+
+        System.out.println("Esse é o valor da área do triângulo: " + df.format(area));
+
+    }
+}
+
+
+
+
+
+
+
+
+public class CalcularSoma{
+
+    public int a;
+    public int b;
+
+    public int somaValores() {
+        return (a * b) /2;
+    }
+
+}
+
+
