@@ -1,0 +1,41 @@
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        DecimalFormat df = new DecimalFormat("###,##0.00");
+
+        CalcularSoma calc;
+        calc = new CalcularSoma(); //Instanciação de classe calcular soma
+
+        System.out.print("Insira o valor em dólar: ");
+        calc.a = sc.nextDouble();
+
+        System.out.print("Insira a cotação atual do dólar: ");
+        calc.b = sc.nextDouble();
+
+        double realdolar = calc.somaValores();
+
+        System.out.println("Esse é o valor convertido em real: " + df.format(realdolar));
+
+    }
+}
+
+
+
+
+
+
+
+public class CalcularSoma{
+
+    public double a;
+    public double b;
+
+    public double somaValores() {
+        return a * b;
+    }
+
+}
+
